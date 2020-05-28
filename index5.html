@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+
+<body>
+    <h1>Digite o nome para incluí-lo na lista</h1>
+    <hr>
+    <input type="text" id="texto" placeholder="Seu nome">
+    <button id="btn">Adicionar</button>
+    <div id="div">
+        <ol id="listaOrdenada"></ol>
+    </div>
+
+    <script>
+        let nomes = ["Allysom", "Rodrigo", "Roberson"]
+
+        const nomeDigitado = document.getElementById("texto")
+        const botaoAdicionar = document.getElementById("btn")
+        const ol = document.getElementById("listaOrdenada")
+
+        nomes.forEach(function (nomess) {
+
+            li = document.createElement("li")
+            ol.appendChild(li)
+            li.innerHTML += nomess
+        })
+
+        botaoAdicionar.onclick = function () {
+            if (nomeDigitado.value != "") {
+                nomes.push(nomeDigitado.value)
+                let ultimo = nomes[nomes.length - 1]
+                li = document.createElement("li")
+                ol.appendChild(li)
+                li.innerHTML += ultimo
+                nomeDigitado.value = ""
+
+            } else {
+                alert("Favor digitar um nome")
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
